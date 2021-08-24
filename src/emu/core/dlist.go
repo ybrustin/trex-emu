@@ -15,7 +15,7 @@ type MyObjectTest struct {
 	dlist DList
 }
 
-//There is no better solotion in go right now! maybe go2.0
+//There is no better solution in go right now! maybe go2.0
 func covert(dlist *DList) *MyObjectTest {
 	var s MyObjectTest
 	return (*MyObjectTest)(unsafe.Pointer(uintptr(unsafe.Pointer(dlist)) - unsafe.Offsetof(s.dlist)))
@@ -61,13 +61,13 @@ func testdList() {
 
 
 */
-// DList embedded inside a diffrent struct
+// DList embedded inside a different struct
 type DList struct {
 	next *DList
 	prev *DList
 }
 
-// DListIterHead iterator in case there are a root the point to the first element
+// DListIterHead iterator in case there is a root that points to the first element
 type DListIterHead struct {
 	head *DList
 	cur  *DList
